@@ -5,7 +5,7 @@ import {
   TwilioWebhookStatus,
 } from "../types/twilio.types";
 
-const router = Router();
+const router: Router = Router();
 
 /**
  * Route pour recevoir les messages WhatsApp entrants
