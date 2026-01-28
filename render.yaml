@@ -3,7 +3,7 @@ services:
     name: twilio-whatsapp-bot
     env: node
     buildCommand: pnpm install && pnpm run build
-    startCommand: node dist/server.js
+    startCommand: pnpm start
     envVars:
       - key: NODE_ENV
         value: production
