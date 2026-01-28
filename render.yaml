@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: twilio-whatsapp-bot
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      # Les variables suivantes doivent être configurées dans le dashboard Render
+      # sous "Environment" après le déploiement initial
+      # - key: TWILIO_ACCOUNT_SID
+      #   value: your_account_sid_here
+      # - key: TWILIO_AUTH_TOKEN
+      #   value: your_auth_token_here
+      # - key: TWILIO_PHONE_NUMBER
+      #   value: +15558706149
+      # - key: TWILIO_WEBHOOK_SECRET (optionnel)
+      #   value: your_webhook_secret_here
