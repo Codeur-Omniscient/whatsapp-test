@@ -13,7 +13,7 @@ Bot WhatsApp simple utilisant Twilio et Express.js avec TypeScript. Le bot répo
 
 ## 📋 Prérequis
 
-- Node.js 18+ et npm
+- Node.js 18+ et pnpm
 - Compte Twilio avec WhatsApp activé
 - Numéro WhatsApp Twilio (déjà configuré: `+15558706149`)
 
@@ -22,7 +22,7 @@ Bot WhatsApp simple utilisant Twilio et Express.js avec TypeScript. Le bot répo
 1. **Cloner le projet et installer les dépendances**
 
 ```bash
-npm install
+pnpm install
 ```
 
 2. **Configurer les variables d'environnement**
@@ -46,7 +46,7 @@ TWILIO_WEBHOOK_SECRET=your_webhook_secret_here  # Optionnel
 3. **Démarrer en mode développement**
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 Le serveur démarre sur `http://localhost:3000`
@@ -66,8 +66,8 @@ Le serveur démarre sur `http://localhost:3000`
 4. Render détectera automatiquement `render.yaml` ou vous pouvez configurer manuellement :
    - **Name**: `twilio-whatsapp-bot`
    - **Environment**: `Node`
-   - **Build Command**: `npm install && npm run build`
-   - **Start Command**: `npm start`
+   - **Build Command**: `pnpm install && pnpm run build`
+   - **Start Command**: `node dist/server.js`
    - **Plan**: Choisissez votre plan (Free disponible)
 
 ### Étape 3 : Configurer les variables d'environnement
@@ -104,10 +104,10 @@ Envoyez un message WhatsApp à votre numéro Twilio (`+15558706149`) et vous dev
 
 ## 📝 Scripts disponibles
 
-- `npm run dev` - Démarre le serveur en mode développement avec hot-reload
-- `npm run build` - Compile le TypeScript en JavaScript
-- `npm start` - Démarre le serveur en production (utilise les fichiers compilés)
-- `npm run type-check` - Vérifie les types TypeScript sans compiler
+- `pnpm run dev` - Démarre le serveur en mode développement avec hot-reload
+- `pnpm run build` - Compile le TypeScript en JavaScript
+- `pnpm start` - Démarre le serveur en production (utilise les fichiers compilés)
+- `pnpm run type-check` - Vérifie les types TypeScript sans compiler
 
 ## 🔍 Endpoints
 
@@ -157,8 +157,9 @@ Les logs incluent :
 │   │   └── twilio.service.ts  # Service Twilio
 │   └── types/
 │       └── twilio.types.ts    # Types TypeScript
-├── config/
-│   └── env.ts                 # Configuration environnement
+├── src/
+│   └── config/
+│       └── env.ts             # Configuration environnement
 ├── dist/                      # Fichiers compilés (généré)
 ├── .env.example               # Template variables d'environnement
 ├── render.yaml                # Configuration Render
